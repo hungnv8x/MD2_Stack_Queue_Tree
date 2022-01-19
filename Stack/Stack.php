@@ -34,7 +34,13 @@ class Stack
 
     public function top()
     {
-        return $this->stacks[count($this->stacks) - 1];
+        if(!$this->isEmpty()){
+            $item = $this->stacks[count($this->stacks) - 1];
+            array_pop($this->stacks);
+            return $item;
+        }else{
+            return "Co gi dau ma lay" ;
+        }
     }
 
     public function isEmpty()
